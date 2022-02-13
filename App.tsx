@@ -33,6 +33,7 @@ const App = () => {
 
 export default App;
 
+// TODO extract w/ useStyles
 const AppStyles = StyleSheet.create({
   safeAreaView: {
     height: '100%',
