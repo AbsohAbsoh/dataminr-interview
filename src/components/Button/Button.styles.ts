@@ -3,7 +3,7 @@ import {Theme} from './../../config/theme';
 
 export const buttonStyles = (theme: Theme): ButtonStyles => {
   return StyleSheet.create({
-    pressable: {
+    container: {
       backgroundColor: theme.primary,
       alignItems: 'center',
       marginHorizontal: 0,
@@ -26,6 +26,6 @@ export const buttonStyles = (theme: Theme): ButtonStyles => {
 };
 
 export interface ButtonStyles {
-  pressable: ViewStyle;
+  container: ViewStyle;
   text: TextStyle;
 }

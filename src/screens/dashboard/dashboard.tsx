@@ -1,18 +1,20 @@
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {FC, useCallback} from 'react';
 import {GestureResponderEvent, ScrollView} from 'react-native';
 import {Button} from '../../components/Button/Button';
 import {Paragraph} from '../../components/Paragraph/Paragraph';
 import {useContent} from '../../config/content';
+import {NavigationParams} from '../../config/navigation';
 import {useStyles} from '../../config/styles';
 import {dashboardStyles} from './dashboard.styles';
 
-const DashboardScreen: FC = () => {
+const DashboardScreen: FC<
+  NativeStackScreenProps<NavigationParams, 'Dashboard'>
+> = ({}) => {
   const styles = useStyles(dashboardStyles);
   const content = useContent('dashboard');
 
-  const onDemoButtonPress = useCallback((_: GestureResponderEvent) => {
-    console.log('Demo button pressed');
-  }, []);
+  const onDemoButtonPress = useCallback((_: GestureResponderEvent) => {}, []);
 
   return (
     <ScrollView contentContainerStyle={styles.background}>
@@ -25,7 +27,7 @@ const DashboardScreen: FC = () => {
       <Button
         content={content.demoButton}
         onPress={onDemoButtonPress}
-        styleOverrides={{pressable: styles.demoButton}}
+        styleOverrides={{container: styles.demoButton}}
       />
     </ScrollView>
   );

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Pressable, GestureResponderEvent, Text} from 'react-native';
+import {GestureResponderEvent, Text, TouchableOpacity} from 'react-native';
 import {useStyles} from '../../config/styles';
 import {DeepPartial} from '../../models/utility/deepPartial';
 import {buttonStyles, ButtonStyles} from './Button.styles';
@@ -13,8 +13,8 @@ export interface ButtonProps {
 export const Button: FC<ButtonProps> = props => {
   const styles = useStyles(buttonStyles, props.styleOverrides);
   return (
-    <Pressable onPress={props.onPress} style={styles.pressable}>
+    <TouchableOpacity onPress={props.onPress} style={styles.container}>
       <Text style={styles.text}>{props.content}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
