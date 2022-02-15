@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Screen -- Dashboard Should render the dashboard and match the snapshot 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ffffec",
+      "flex": 1,
+      "padding": 25,
+      "width": "100%",
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#333333",
+          "fontSize": 18,
+          "lineHeight": 30,
+          "marginTop": 150,
+          "textAlign": "center",
+        }
+      }
+    >
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+    </Text>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ff5800",
+          "borderRadius": 40,
+          "marginHorizontal": 0,
+          "marginTop": 150,
+          "opacity": 1,
+          "padding": 10,
+          "shadowColor": "black",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.5,
+          "shadowRadius": 1,
+          "width": 200,
+        }
+      }
+      testID="DASHBOARD - DEMO_BUTTON"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#2a2a2a",
+            "fontSize": 30,
+          }
+        }
+      >
+        OK
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;

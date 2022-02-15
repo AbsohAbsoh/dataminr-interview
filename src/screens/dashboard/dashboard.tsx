@@ -7,6 +7,7 @@ import {useContent} from '../../config/content';
 import {NavigationParams} from '../../config/navigation';
 import {useStyles} from '../../config/styles';
 import {dashboardStyles} from './dashboard.styles';
+import {dashboardTags} from './dashboard.tags';
 
 const DashboardScreen: FC<
   NativeStackScreenProps<NavigationParams, 'Dashboard'>
@@ -28,6 +29,7 @@ const DashboardScreen: FC<
         content={content.demoButton}
         onPress={onDemoButtonPress}
         styleOverrides={{container: styles.demoButton}}
+        testID={dashboardTags.demoButton}
       />
     </ScrollView>
   );
