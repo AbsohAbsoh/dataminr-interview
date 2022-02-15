@@ -1,18 +1,19 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DashboardScreen from './src/screens/dashboard/dashboard';
-import {defaultTheme, ThemeContext} from './src/config/theme';
+import {defaultTheme, Theme, ThemeContext} from './src/config/theme';
 import {Route} from './src/config/navigation';
 import {SandboxScreen} from './src/screens/sandbox/sandbox';
+import {useStyles} from './src/config/styles';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <ThemeContext.Provider value={defaultTheme}>
-      <SafeAreaView style={AppStyles.safeAreaView}>
+      <SafeArea>
         <StatusBar barStyle={'default'} />
         <NavigationContainer>
           <Stack.Navigator>
@@ -26,17 +27,24 @@ const App = () => {
             <Stack.Screen name={Route.Sandbox} component={SandboxScreen} />
           </Stack.Navigator>
         </NavigationContainer>
-      </SafeAreaView>
+      </SafeArea>
     </ThemeContext.Provider>
   );
 };
 
 export default App;
 
-// TODO extract w/ useStyles
-const AppStyles = StyleSheet.create({
-  safeAreaView: {
-    height: '100%',
-    width: '100%',
-  },
-});
+const SafeArea: FC = props => {
+  const styles = useStyles(AppStyles);
+  return (
+    <SafeAreaView style={styles.safeAreaView}>{props.children}</SafeAreaView>
+  );
+};
+
+const AppStyles = (_: Theme) =>
+  StyleSheet.create({
+    safeAreaView: {
+      height: '100%',
+      width: '100%',
+    },
+  });

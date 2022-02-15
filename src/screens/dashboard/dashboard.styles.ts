@@ -4,11 +4,13 @@ import {Theme} from '../../config/theme';
 export const dashboardStyles = (theme: Theme) => {
   return StyleSheet.create({
     background: {
-      backgroundColor: theme.background,
-      flex: 1,
       padding: 25,
       width: '100%',
       alignItems: 'center',
+    },
+    backgroundWrapper: {
+      flex: 1,
+      backgroundColor: theme.background,
     },
     demoParagraph: {
       marginTop: 150,
